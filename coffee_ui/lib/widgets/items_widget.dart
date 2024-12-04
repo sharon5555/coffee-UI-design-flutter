@@ -11,7 +11,10 @@ class ItemWidget extends StatelessWidget {
     'Espresso',
     'Black Coffee',
     'Cold Coffee',
-    'Latte', // Example of a duplicate entry
+    'americano',
+    'caffe mocha',
+    'cortado',
+    'ice coffee', // Example of a duplicate entry
   ];
 
   @override
