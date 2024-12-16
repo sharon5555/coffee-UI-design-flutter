@@ -1,7 +1,10 @@
-import 'package:flutter/material.dart';
-import '../widgets/home_bottom_bar.dart';
+// ignore_for_file: non_constant_identifier_names
 
-import '../widgets/items_widget.dart';
+import 'package:coffee_ui/model/nearby_model.dart';
+import 'package:coffee_ui/widgets/banner.dart';
+import 'package:coffee_ui/widgets/custom_appbar.dart';
+import 'package:coffee_ui/widgets/nearbyproduct_card.dart';
+import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -37,110 +40,144 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(top: 15),
-          child: ListView(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Icon(
-                        Icons.sort_rounded,
-                        color: Colors.orange.withOpacity(0.5),
-                        size: 35,
+              // Custom AppBar
+              const CustomAppBar(),
+
+              const SizedBox(height: 20),
+
+              // App Banner
+              const AppBanner(),
+
+              const SizedBox(height: 20),
+
+              // Heading of Nearby Product
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Nearby",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.orange,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: const Text(
+                      "See More",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.lime,
                       ),
                     ),
-                    InkWell(
-                      onTap: () {},
-                      child: Icon(
-                        Icons.notifications,
-                        color: Colors.orange.withOpacity(0.5),
-                        size: 35,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 30),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15),
-                child: Text(
-                  "It's a Great Day for Coffee",
-                  style: TextStyle(
-                    color: Colors.orange,
-                    fontSize: 30,
-                    fontWeight: FontWeight.w500,
                   ),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                width: MediaQuery.of(context).size.width,
-                height: 60,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 50, 54, 56),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: "Find your coffee",
-                    hintStyle: TextStyle(
-                      color: Colors.orange.withOpacity(0.5),
-                    ),
-                    prefixIcon: Icon(
-                      Icons.search,
-                      size: 30,
-                      color: Colors.orange.withOpacity(0.5),
-                    ),
-                  ),
-                ),
-              ),
-              // Tab Bar
-              TabBar(
-                controller: _tabController,
-                labelColor: Colors.orange,
-                labelStyle: 
-                const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                labelPadding: const EdgeInsets.symmetric(horizontal: 20),
-                unselectedLabelColor: Colors.grey.withOpacity(0.5),
-                isScrollable: true,
-                indicator: const UnderlineTabIndicator(
-                  borderSide: BorderSide(
-                    width: 3,
-                    color: Colors.orange,
-                  ),
-                  insets: EdgeInsets.symmetric(horizontal: 16),
-                ),
-                tabs: const [
-                  Tab(text: "Hot Coffee"),
-                  Tab(text: "Cold Coffee"),
-                  Tab(text: "Cappuiccino"),
-                  Tab(text: "Americano"),
                 ],
               ),
-              // TabBarView
-              const SizedBox(height: 10),
-              Center(
-                child: Column(
+
+              const SizedBox(height: 20),
+
+              // Indoor & Outdoor Coffee
+              Container(
+                height: 55,
+                decoration: BoxDecoration(
+                  color: Colors.white38,
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: Row(
                   children: [
-                    ItemWidget(),
-                    ItemWidget(),
-                    ItemWidget(),
-                    ItemWidget(),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 55,
+                          decoration: BoxDecoration(
+                            color: Colors.orange,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Indoor",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {},
+                        child: const Center(
+                          child: Text(
+                            "Outdoor",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
 
+              const SizedBox(height: 20),
+
+              // Nearby Product
+              SizedBox(
+                height: 210,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: nearproductinfo.length,
+                    itemBuilder: (context, index) => NearByProductCard(
+                      product: nearproductinfo[index],
+                      press: () {},
+                    ),
+                  ),
+                ),
+
+                const SizedBox(
+                  height: 20,
+                ),
+
+                // Special Products......
+                Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Special for you",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.orange,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: const Text(
+                      "See More",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.lime,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: const HomeBottomBar(),
     );
   }
 }
+
