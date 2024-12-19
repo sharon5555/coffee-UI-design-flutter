@@ -1,4 +1,5 @@
-import 'package:coffee_ui/model/nearby_model.dart';
+import 'package:coffee_ui/model/special_model.dart';
+import 'package:coffee_ui/screens/single_item_screen.dart';
 import 'package:flutter/material.dart';
 
 class SpecialProductCard extends StatelessWidget {
@@ -8,7 +9,7 @@ class SpecialProductCard extends StatelessWidget {
     required this.press,
   });
 
-  final NearByProduct product;
+  final SpecialProduct product;
   final VoidCallback press;
 
   @override
@@ -16,7 +17,14 @@ class SpecialProductCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 8, bottom: 8, right: 12),
       child: InkWell(
-        onTap: press,
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SingleItemScreen(img: product.image),
+            ),
+          );
+        },
         child: Material(
           elevation: 4,
           borderRadius: BorderRadius.circular(20),

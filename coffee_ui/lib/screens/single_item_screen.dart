@@ -33,8 +33,11 @@ class SingleItemScreen extends StatelessWidget {
                 // Image section
                 Center(
                   child: Image.asset(
-                    "assets/$img.png",
+                    "assets/$img.png",  // Ensure the image name is correct
                     width: MediaQuery.of(context).size.width / 1.2,
+                    errorBuilder: (context, error, stackTrace) {
+                      return const Center(child: Text("Image not found"));
+                    },
                   ),
                 ),
                 const SizedBox(height: 50),
