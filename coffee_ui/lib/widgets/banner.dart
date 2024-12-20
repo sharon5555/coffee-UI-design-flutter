@@ -9,7 +9,7 @@ class AppBanner extends StatelessWidget {
               height: 300,
               width: double.infinity,
               decoration: BoxDecoration(
-                image: const DecorationImage(image: AssetImage("assets/banner.jpg"),
+                image: const DecorationImage(image: AssetImage("assets/hotcoffee.jpeg"),
                 fit: BoxFit.cover,
               ),
                 borderRadius: BorderRadius.circular(20),
