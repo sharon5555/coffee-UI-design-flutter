@@ -1,8 +1,10 @@
 class SpecialProduct {
-  late final String description, image, name;
-  late final double price;
+  final String name;
+  final String image;
+  final String description;
+  final double price;
 
-  SpecialProduct({
+  const SpecialProduct({
     required this.name,
     required this.image,
     required this.description,
@@ -10,59 +12,59 @@ class SpecialProduct {
   });
 }
 
-List specialproduct = [
-  SpecialProduct(
-    image: 'assets/americano.png',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
+List<SpecialProduct> specialProducts = [
+  const SpecialProduct(
+    image: 'assets/americano.jpeg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     name: 'Americano Coffee',
-    price: 150,
+    price: 150.0,
   ),
-  SpecialProduct(
-    image: 'assets/ice coffee.jpg',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
+  const SpecialProduct(
+    image: 'assets/icecoffee.jpg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     name: 'Ice Coffee',
-    price: 150,
+    price: 70.0,
   ),
-  SpecialProduct(
-    image: 'assets/Black Coffee.png',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
+  const SpecialProduct(
+    image: 'assets/blackcoffee.jpeg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     name: 'Black Coffee',
-    price: 50,
+    price: 50.0,
   ),
-  SpecialProduct(
-    image: 'assets/Cold Coffee.png',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    name: 'Cold Coffee',
-    price: 250,
+  const SpecialProduct(
+    image: 'assets/hotcoffee.jpeg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    name: 'Hot Coffee',
+    price: 250.0,
   ),
-  SpecialProduct(
+  const SpecialProduct(
     image: 'assets/caffe mocha.jpg',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     name: 'Caffe Mocha',
-    price: 150,
+    price: 150.0,
   ),
-  SpecialProduct(
+  const SpecialProduct(
     image: 'assets/banner.jpg',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    name: 'Creamy Coffee',
-    price: 100,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    name: 'Black Coffee',
+    price: 100.0,
   ),
-  SpecialProduct(
+  const SpecialProduct(
     image: 'assets/coffee.jpg',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     name: 'Coffee',
-    price: 170,
+    price: 170.0,
   ),
-  SpecialProduct(
-    image: 'assets/cortado.png',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
+  const SpecialProduct(
+    image: 'assets/cortado.jpeg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     name: 'Cortado Coffee',
-    price: 350,
+    price: 350.0,
   ),
-  SpecialProduct(
-    image: 'assets/Espresso.png',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
+  const SpecialProduct(
+    image: 'assets/espresso.jpeg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     name: 'Espresso Coffee',
-    price: 200,
+    price: 200.0,
   ),
 ];

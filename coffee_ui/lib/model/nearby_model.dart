@@ -12,57 +12,65 @@ class NearByProduct {
 
 List nearproductinfo = [
   NearByProduct(
-    image: 'assets/americano.png',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    name: 'Americano Coffee',
-    price: 150,
+    image: 'assets/espresso.jpeg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    name: 'Espresso Coffee',
+    price: 200.0,
   ),
-  NearByProduct(
-    image: 'assets/ice coffee.jpg',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    name: 'Ice Coffee',
-    price: 150,
-  ),
-  NearByProduct(
-    image: 'assets/Black Coffee.png',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    name: 'Black Coffee',
-    price: 50,
-  ),
-  NearByProduct(
-    image: 'assets/Cold Coffee.png',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    name: 'Cold Coffee',
-    price: 250,
-  ),
+  
   NearByProduct(
     image: 'assets/caffe mocha.jpg',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     name: 'Caffe Mocha',
-    price: 150,
+    price: 150.0,
+  ),
+
+NearByProduct(
+    image: 'assets/banner.jpg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    name: 'Black Coffee',
+    price: 100.0,
+  ),
+
+NearByProduct(
+    image: 'assets/hotcoffee.jpeg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    name: 'Hot Coffee',
+    price: 250.0,
+  ),
+
+  NearByProduct(
+    image: 'assets/blackcoffee.jpeg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    name: 'Black Coffee',
+    price: 50.0,
   ),
   NearByProduct(
-    image: 'assets/banner.jpg',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    name: 'Creamy Coffee',
-    price: 100,
+    image: 'assets/americano.jpeg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    name: 'Americano Coffee',
+    price: 150.0,
   ),
+
+NearByProduct(
+    image: 'assets/icecoffee.jpg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    name: 'Ice Coffee',
+    price: 70.0,
+  ),
+  
   NearByProduct(
     image: 'assets/coffee.jpg',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     name: 'Coffee',
-    price: 170,
+    price: 170.0,
   ),
   NearByProduct(
-    image: 'assets/cortado.png',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    image: 'assets/cortado.jpeg',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     name: 'Cortado Coffee',
-    price: 350,
+    price: 350.0,
   ),
-  NearByProduct(
-    image: 'assets/Espresso.png',
-    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    name: 'Espresso Coffee',
-    price: 200,
-  ),
+  
+
 ];

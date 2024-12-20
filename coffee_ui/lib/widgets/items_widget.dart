@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../screens/single_item_screen.dart';
 
 class ItemWidget extends StatefulWidget {
   const ItemWidget({super.key});

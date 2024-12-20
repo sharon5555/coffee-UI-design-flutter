@@ -1,15 +1,14 @@
 import 'package:coffee_ui/model/special_model.dart';
-import 'package:coffee_ui/screens/single_item_screen.dart';
 import 'package:flutter/material.dart';
 
 class SpecialProductCard extends StatelessWidget {
   const SpecialProductCard({
     super.key,
-    required this.product,
+    required this.specialProducts,
     required this.press,
   });
 
-  final SpecialProduct product;
+  final SpecialProduct specialProducts;
   final VoidCallback press;
 
   @override
@@ -17,19 +16,13 @@ class SpecialProductCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 8, bottom: 8, right: 12),
       child: InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SingleItemScreen(img: product.image),
-            ),
-          );
-        },
+        onTap: () {},
         child: Material(
           elevation: 4,
           borderRadius: BorderRadius.circular(20),
           child: Column(
             children: [
+              // Product Image
               Container(
                 height: 120,
                 width: 180,
@@ -41,10 +34,11 @@ class SpecialProductCard extends StatelessWidget {
                   color: Colors.white38,
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage(product.image),
+                    image: AssetImage(specialProducts.image), // Full path to image
                   ),
                 ),
               ),
+              // Product Details
               SizedBox(
                 width: 180,
                 child: Padding(
@@ -52,7 +46,7 @@ class SpecialProductCard extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        product.name,
+                        specialProducts.name,
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
@@ -63,7 +57,7 @@ class SpecialProductCard extends StatelessWidget {
                         height: 5,
                       ),
                       Text(
-                        "\$${product.price}",
+                        "\$${specialProducts.price}",
                         style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
